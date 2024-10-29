@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" xmlns="http:/www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>User Dashborad</title>
+
+</head>
+
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-header">User Details</div>
+						<div class="card-title">My Details</div>
+						<div class="card-body">card Body
+							<h1>User Dashboard</h1>
+							<h2>This is your Private Dashboard</h2>
+							<h3>Welcome User:<span th:text="${user.name}"></span></h3>
+							<h3>User Email<span th:text="${user.email}"></span></h3>
+						</div>
+						<div class="card-footer">card footer: Copyright © 2011 ABC Pvt. Ltd. All rights reserved.</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+				<div class="card">
+					<div class="card-header">My Contacts</div>
+					<div class="card-body">
+<!--Start of All Contact Table -->
+						<!-- <div class="table-responsive">
+								<table class="table">
+									<caption>List of users</caption>
+									<thead>
+										<tr>
+											<th scope="col">#ID</th>
+											<th scope="col">Name</th>
+											<th scope="col">Email</th>
+											<th scope="col">Phone</th>
+											<th scope="col">Action</th>
+						
+										</tr>
+									</thead>
+									<tbody>
+						
+										<tr th:each="c :${contacts}">
+											<th scope="row" th:text="${'SCM/2023-'+c.cid}">1</th>
+											<td>
+												<img class="my_profile_picture" src=""
+													th:src="@{'/images/'+${c.imageUrl}}" alt="profile photo" />
+												<span th:text="${c.name}"></span>
+											</td>
+											<td><a href="" th:href="@{'/user/'+${c.cid}+'/contact/'}"><span
+														th:text="${c.email}"></span></a> </td>
+											<td th:text="${c.phone}">@mdo</td>
+											<td>
+												Linke based working no need for JavaScript Function
+												<a th:href="@{'/user/delete/'+${c.cid}}" class="btn btn-danger btn-sm">Delete</a>
+												<a href="#" th:onclick="|deleteContact(${c.cid})|" class="btn btn-danger btn-sm">Delete</a> 
+												<form method="post" th:action="@{'/user/update-contact/'+${c.cid}}" class="mt-2">
+												<button type="submit" class="btn btn-info btn-sm">Update</button>
+												</form>
+											</td>
+										</tr>
+						
+									</tbody>
+								</table>
+								Pagination by Java
+								<nav aria-label="Page navigation example">
+									<ul class="pagination">
+						
+										<li th:if="${currentPage !=0}" class="page-item"><a
+												th:href="@{'/user/show_contact/'+${currentPage-1}}" class="page-link"
+												href="#">Previous</a></li>
+						
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+						
+										<li th:each="i:${#numbers.sequence(1,totalPages)}" class="page-item"><a class="page-link" href="#"><span th:text="${i}"></span></a></li>
+						
+										<li th:classappend="${currentPage==i-1?'active':''}"
+											th:each="i:${#numbers.sequence(1,totalPages)}" class="page-item"><a
+												th:href="@{'/user/show_contact/'+${i-1}}" class="page-link"
+												href="#"><span th:text="${i}"></span></a></li>
+						
+										<li th:if="${currentPage+1 !=totalPages}" class="page-item"><a
+												th:href="@{'/user/show_contact/'+${currentPage+1}}" class="page-link"
+												href="#">Next</a></li>
+									</ul>
+								</nav>
+							</div> -->
+<!--End of All Contact Table -->								
+					 </div>
+						<div class="card-footer">@contacts</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<!-- <h1>User Dashboard</h1>
+		<h2>This is your Private Dashboard</h2>
+		<h3>Welcome User:<span th:text="${user.name}"></span></h3>
+		<h3>User Email<span th:text="${user.email}"></span></h3>
+		<h1><a href="" th:href="@{/signin?logout}">logout</a></h1> -->
+	</section>
+</body>
+
+</html>
